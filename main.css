@@ -1,0 +1,12 @@
+.b1 {
+  color: green;
+}
+
+.result {
+  font-size: 40px;
+  line-height: 50px;
+  background-color: aquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

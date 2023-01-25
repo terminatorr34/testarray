@@ -323,12 +323,125 @@
 
 // Напишите функцию, которая преобразует глубокий массив в одномерный. Ожидаемый результат: [1, 2, [3, 4, [5]]] => [1, 2, 3, 4, 5]
 
-const flatten = (array) => {const resr =  array.reduce((acc, val) => acc.concat    
+const flatten = (array) => {
+  const resr = array.reduce((acc, val) => acc.concat
     (Array.isArray(val) ? flatten(val) : val)
-    
-    , []); 
-console.log(resr)
-    return resr
+
+    , []);
+  console.log(resr)
+  return resr
 }
 
 flatten([1, 2, [3, 4, [5]]])
+
+
+// коммит тест
+
+
+// skjdfsdkfjsdkfjsd;klgit fjsd
+
+// rew = 'rfdfksdklfjdfjk'
+// function str1(string1) {
+//    res =  string1.split('')
+//    var coma = ' 12'
+// console.log(res)
+
+//    return res
+// }
+
+// str1(rew);
+// пример показывает работы замыкания внутренняя функция ссылается на count, который находится во внешней функции, при запуске каждый раз внутрення функция ищет count и находит ее в глобальном лексическом окружении созданном  от предыдущего вызова функции, поэтому счетчик каждый раз выводит новое значение count
+// function makeCounter() {
+//     let count = 0;
+//     return function() {
+//         // console.log (count++)
+//       return count++;
+//     };
+//     console.log (count)
+//   }
+
+//   let counter1 = makeCounter();
+//   let counter2 = makeCounter();
+//   alert( counter1() ); // 1
+//   alert( counter1() ); // 1
+
+//alert( counter2() ); // 0 (независимо)
+
+// Нужно получить объект с ключами user, внутри user будет вложенный объект c склчами name и secondname 
+// https://youtu.be/8Xuftz2IiAI?t=4370 
+
+// const inData = 'user.name.firstname=Bob&user.name.secondname=Smith&user.favouritecolor=light%20Blue&experiments.theme=dark';
+// function objectify(str) {
+//   let res = {}
+//   str = str.split('&')  // ['user.name.firstname=Bob', 'user.name.secondname=Smith', 'user.favouritecolor=light%20Blue', 'experiments.theme=dark']
+//   str = str.map(l => l.split('.'))  // 0: ['user', 'name', 'firstname=Bob']  1:['user', 'name', 'secondname=Smith']
+//   for (let i = 0; i < str.length; i++) {
+//     let cur = res // создаем временную переменную cur, которая смотрит на результирующий res
+//     for (let key = 0; key < str[i].length; key++) {
+//       let name = str[i][key]
+//       // console.log(name)
+//       if (key == str[i].length - 1) {
+//         name = name.split('=')
+//         cur[name[0]] = decodeURIComponent(name[1])
+//         break
+//       } 
+
+//       if (cur[name]) {
+//         cur = cur[name]
+//       } else {
+//         cur[name] = {}
+//         cur = cur[name]
+//       }
+//     }
+//   }
+// return res
+//   // console.log(str)
+// }
+// const objected = objectify(inData)
+// console.log(objected)
+// objectify(inData)
+
+// Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом, null и т.п.  * Ожидаемый результат: true если это объект, false в противном случае. ({ a: 1 }) => true, ([1, 2, 3]) => false
+
+// function isObjectArray (obj) {
+//   if (typeof(obj)==='object' && obj!==null ) {
+//   return !Array.isArray(obj)
+// }
+// else return 'примитив или ноль'
+// }
+// const ft = isObjectArray({fr:12, k:23})
+// console.log (ft);
+
+
+// Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.* Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+
+// returnInnerArray =(obj) => {
+//   let res =[]
+// for (const key in obj) {  
+// res.push([key,obj[key]])
+//   }
+//   return res
+// }
+// const res1 = returnInnerArray({ a: 1, b: 2 })
+// console.log(res1)
+
+
+// returnInnerArray =(obj) => {
+
+//   return Object.entries(obj)
+
+// }
+// const res1 = returnInnerArray({ a: 1, b: 2 })
+// console.log(res1)
+
+returnInnerArray = (obj) => {
+
+  red = Object.keys(obj).map((Element) => {
+    return [Element, obj[Element]]
+
+  })
+return red
+}
+const res1 = returnInnerArray({ a: 1, b: 2 })
+console.log(res1)
+

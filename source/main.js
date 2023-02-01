@@ -425,6 +425,8 @@ flatten([1, 2, [3, 4, [5]]])
 // const res1 = returnInnerArray({ a: 1, b: 2 })
 // console.log(res1)
 
+// Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.* Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+
 
 // returnInnerArray =(obj) => {
 
@@ -434,14 +436,160 @@ flatten([1, 2, [3, 4, [5]]])
 // const res1 = returnInnerArray({ a: 1, b: 2 })
 // console.log(res1)
 
-returnInnerArray = (obj) => {
+// Описание задачи: Напишите функцию, которая возвращает вложенный массив вида `[[key, value], [key, value]]`.* Ожидаемый результат: ({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
 
-  red = Object.keys(obj).map((Element) => {
-    return [Element, obj[Element]]
+// returnInnerArray = (obj) => {
+//   red = Object.keys(obj).map((Element) => {
+//     return [Element, obj[Element]]
+//   })
+// return red
+// }
+// const res1 = returnInnerArray({ a: 1, b: 2 })
+// console.log(res1)
 
-  })
-return red
-}
-const res1 = returnInnerArray({ a: 1, b: 2 })
-console.log(res1)
+//  Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.  * Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+// function newObjectFilter(obj, str) {
+//   res = {};
+//   console.log(obj)
+//   for (i in obj) {
+//     if (i !== str) 
+//       res[obj[i]]= { [i]: obj[i] }
+//   }
+//   console.log (res)
+//   return res
+// }
+// const res1 = newObjectFilter
+// console.log(res1({ a: 1, b: 2, d:4, f: 5 }, 'b'))
+
+//  Описание задачи: Напишите функцию, которая возвращает новый объект без указанных значений.  * Ожидаемый результат: ({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+// const newObjectfiltered = (obj, str) => {
+//   delete obj[str]
+//   return obj
+// }
+// console.log(newObjectfiltered({ a: 1, b: 2, d: 4, f: 5 }, 'b'))
+
+
+// Напишите функцию, которая поверхностно сравнивает два объекта.   * Ожидаемый результат: True если объекты идентичны, false если объекты разные ({ a: 1, b: 1 }, { a: 1, b: 1 }) => true
+
+// function compareObjects(obj1, obj2) {
+//   let res1 = []
+//   if (obj1.length == obj2.length) {
+//     const fObj = Object.keys(obj1)
+//     const SObj = Object.keys(obj2)
+//     res = []
+//     fObj.map((Element) => {
+//       if (obj1[Element] == obj2[Element]) {
+//         res.push(true)
+//       }
+//       else { res.push(false) }
+//       return res
+//     })
+//     if (res.length < obj1.length) {
+//       return false
+//     }
+//     else {
+//       if ((res.indexOf(false)) >= 0) { return false }
+//       else { return true}
+//     }
+//   }
+//   else {return false}
+// }
+// const f = compareObjects({ b: 2, a: 1 }, { a: 1, b: 2 })
+
+
+//  const isEqual = (firstObj, secondObj) => {
+//   const firstObjKeys = Object.keys(firstObj);  // возвращаем в массив свойства без значений
+//   const secondObjKeys = Object.keys(secondObj); // возвращаем в массив свойства без значений
+//   if (firstObjKeys.length !== secondObjKeys.length) {
+//     return false;
+//   }
+
+//   return !firstObjKeys.filter((key) => {firstObj[key] !== secondObj[key]}).length; // Здесь знак ! перед массивов просто обращает намбер в булеан - .length - возвращает длину получившегося массиваЮ если она 0 - то возвращается false
+// };
+
+// const cObj = isEqual({ a: 1, b: 2 }, { b: 2, a: 1  })
+// console.log(cObj)
+
+// Напишите функцию, которая вызывает метод массива на заданный путь объекта.  * Ожидаемый результат: ({ a: { b: [1, 2, 3] } }, 'a.b', splice, [1, 2]) => [2, 3]
+
+// const invoke = (object, path, func, args) => {
+//   const splittedPath = path.split('.');
+// console.log (splittedPath)  //(2) ['a', 'b']
+
+//   const target = splittedPath.reduce((acc, key) => {
+//     acc = acc[key] ? acc[key] : object[key];
+//     return acc; 
+//   }, {});
+//   console.log (target) //[1, 2, 3]
+
+//   return Array.prototype[func].apply(target, args);
+
+// }
+
+
+// const data = { a: { b: [1, 2, 3] } }
+// const fe = invoke(data, 'a.b', 'splice', [1, 2]); // [2, 3]
+// console.log(fe)
+
+
+// function Person(first, last, age, gender, interests) {  //функция выполняет функцию конструктора, который создает объект 
+
+  // Определения методов и свойств
+//   this.name = {
+//     'first': first,
+//     'last': last
+//   };
+//   this.age = age;
+//   this.gender = gender;
+//   this.interestingss = interests
+  //...см. Введение в объекты для полного определения
+// }
+
+
+// var person1 = new Person('peter', 'kim', 19, 'm', 'paleonthology') // мы используем этот конструктор чтобы создать новый объект
+// console.log(person1)
+
+// Person.prototype.newMeth = function () { console.log('новый метод') }
+
+// console.log(person1.newMeth)
+
+// const identity = (v) => v;
+// identity('wow'); // wow
+
+// const sum = identity((a, b) => a + b);
+// console.log (sum(1, 8));
+
+// const generateSumFinder = () => {
+//   const sum = (a, b) => a + b;     // создали функцию
+//   return sum;                      // и вернули ее
+// };
+
+// const sum = generateSumFinder();   // sum теперь — функция, которую вернула функция generateSumFinder
+// sum(1, 5); // 6   
+
+
+
+//   const test = {
+//     name: 'hello worla',
+//     createAnonFunction: function () {
+//       return function () {
+//         console.log(this.name);  //в случае обычной функции delcaration this смотрит на родительскую функцию и там нет name, поэтому консоль показывает object jbject 
+//         console.log(arguments);
+//       };
+//     },
+
+//     createArrowFunction: function (b) {
+//       return () => {
+//         console.log(this.name);  // в случае стрелочной функции this смотрим туда, куда смотрит ее родитель, то есть на контекст объекта test и видит свойство name 
+//         console.log(arguments);
+//       };
+//     }
+//   };
+//   let anon = test.createAnonFunction()
+// anon('hello', 'gkdfo')
+// let arrow = test.createArrowFunction()
+// arrow('hello', 'gkdfo')
+
 

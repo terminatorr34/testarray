@@ -13,7 +13,7 @@
 
 <body>
 
-    <h1>коммит2/h1>
+    <h1 id='checking'>коммит2 </h1>
         <div class="out-1">
 
         </div>
@@ -31,21 +31,21 @@
         <table id="table">
                 <tr>
                     <td class="maincolumn">1</td>
-                    <td  class="maincolumn">24 </td>
-                    <td  class="maincolumn">32 </td>
+                    <td  class="maincolumn">7 </td>
+                    <td  class="maincolumn">3 </td>
                     <td  class="maincolumn">4 </td>
                 </tr>           
                 <tr>
-                    <td>1</td>
-                    <td>7 </td>
-                    <td>8 </td>
+                    <td>8</td>
+                    <td>24 </td>
+                    <td>6 </td>
                     <td>2 </td>
                 </tr>
                 <tr>
                     <td>11</td>
                     <td>5 </td>
                     <td>9 </td>
-                    <td>1 </td>
+                    <td>16 </td>
                 </tr>
         </table>
 

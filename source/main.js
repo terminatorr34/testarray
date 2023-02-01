@@ -536,7 +536,7 @@ flatten([1, 2, [3, 4, [5]]])
 
 // function Person(first, last, age, gender, interests) {  //функция выполняет функцию конструктора, который создает объект 
 
-  // Определения методов и свойств
+// Определения методов и свойств
 //   this.name = {
 //     'first': first,
 //     'last': last
@@ -544,7 +544,7 @@ flatten([1, 2, [3, 4, [5]]])
 //   this.age = age;
 //   this.gender = gender;
 //   this.interestingss = interests
-  //...см. Введение в объекты для полного определения
+//...см. Введение в объекты для полного определения
 // }
 
 
@@ -593,3 +593,22 @@ flatten([1, 2, [3, 4, [5]]])
 // arrow('hello', 'gkdfo')
 
 
+
+
+// function test() {
+//   res = []
+//   for (let i = 0; i < 4; i++) {
+//     res[i] = i + 2;
+//   }
+//   return res
+// }
+// test()
+// let resd = test()
+// console.log(resd)
+
+const res = document.getElementById('checking').addEventListener('click', function () {
+  
+const res = [10,20,30,40].map((element, index) => {return element})
+console.log ('res')
+console.log(res)
+})
